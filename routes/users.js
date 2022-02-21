@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const {makeAccount} = require('../domain/account');
+const {getAccountInfo, makeAccount} = require('../domain/account');
 
-/* GET users listing. */
+router.get('/', getAccountInfo);
+
 router.post('/new', makeAccount);
 
 module.exports = router;
